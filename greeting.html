@@ -10,19 +10,39 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
     <script type="text/babel">
-      class Greeting extends React.Component {
-             render() {
-               return (
-                 <div>
-                   <h1>Hello {this.props.name}!</h1>
-                 </div>
-               );
-             }
-           }
 
-           ReactDOM.render(
-             <Greeting name= "Bloc Student"/>, document.getElementById('app')
-           );
+       class ItemList extends React.Component {
+         constructor(props){
+          super(props);
+           this.state = {mindset: 'stressed'};
+
+           }
+         
+
+         render() {
+           return (
+             <div className="item-list">
+             <h1>Item List For Learning {this.props.topic}</h1>
+
+              <ul>
+                <li>Elements</li>
+                <li>Components</li>
+                <li>Props</li>
+                <li>State</li>
+              </ul>
+              <p>Current state of mind is {this.state.mindset}</p>
+            </div>
+          );
+        }
+      }
+
+
+    ItemList.defaultProps ={
+      topic: "React"
+    }
+
+    ReactDOM.render(<ItemList />,document.getElementById('app'));
     </script>
+
   </body>
 </html>
