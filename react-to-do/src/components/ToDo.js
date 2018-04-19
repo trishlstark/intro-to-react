@@ -4,9 +4,12 @@ import React, { Component } from 'react';
    render() {
      return (
        <li>
-         <input type="checkbox" checked={ this.props.isCompleted } onChange={ this.props.toggleComplete } />
+         <input type="checkbox" value={ this.props.isCompleted } onChange={ this.props.toggleComplete }  />
          <span>{ this.props.description }</span>
+         <button type="submit" onClick={this.props.deleteToDo}>Delete</button> 
        </li>
+
+
      );
    }
  }
